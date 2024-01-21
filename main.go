@@ -11,4 +11,12 @@ func main() {
 	basic.Format()
 	basic.Variable()
 	basic.Constant()
+	basic.Pointer()
+	basic.Array()
+	basic.Slice()
+	basic.Map()
+	basic.Function()
+	basic.Struct()
+	basic.Interface()
+	basic.Statement()
 }
