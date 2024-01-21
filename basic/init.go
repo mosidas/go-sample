@@ -4,8 +4,7 @@ import (
 	"fmt"
 )
 
+// init is called  before main() when import this package
 func init() {
-	fmt.Println("■■■■■■■■■■■■■■■")
-	fmt.Println("■■■■ Basic ■■■■")
-	fmt.Println("■■■■■■■■■■■■■■■")
+	fmt.Println("imported basic package")
 }

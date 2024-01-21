@@ -25,22 +25,24 @@ func PanicAndRecover() {
 	fmt.Println("end") // not called
 }
 
+func printRecover(err interface{}) {
+	if err != nil {
+		fmt.Println("recover:", err)
+	}
+}
+
 func raisepanic() {
 	defer func() {
-		if err := recover(); err != nil {
-			fmt.Println("recover:", err)
-		}
+		printRecover(recover())
 	}()
-	fmt.Println("do something start")
+	fmt.Println("raisepanic start")
 	panic("panic!")
-	fmt.Println("do something end") // not called
+	fmt.Println("raisepanic end") // not called
 }
 
 func outofrange() {
 	defer func() {
-		if err := recover(); err != nil {
-			fmt.Println("recover:", err)
-		}
+		printRecover(recover())
 	}()
 	// out of range
 	var a []int = []int{1, 2, 3}
@@ -49,9 +51,7 @@ func outofrange() {
 
 func nilpointer() {
 	defer func() {
-		if err := recover(); err != nil {
-			fmt.Println("recover:", err)
-		}
+		printRecover(recover())
 	}()
 	// not initialize(nil pointer)
 	var b *int
@@ -60,9 +60,7 @@ func nilpointer() {
 
 func interfaceconversion() {
 	defer func() {
-		if err := recover(); err != nil {
-			fmt.Println("recover:", err)
-		}
+		printRecover(recover())
 	}()
 	// interface conversion
 	var a interface{} = 1
