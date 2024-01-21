@@ -8,6 +8,7 @@ func Variable() {
 	fmt.Println("=== variable ===")
 	// single
 	var x int
+	fmt.Println(x) // 0
 	x = 1
 	fmt.Println(x) // 1
 
