@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"sample/basic"
 	"sample/goroutine"
+	"sample/library"
 )
 
 func main() {
@@ -34,4 +35,8 @@ func main() {
 	goroutine.Channel()
 	//goroutine.Deadlock()
 	goroutine.Select()
+	fmt.Println("■■■■■■■■■■■■■■■■■")
+	fmt.Println("■■■■ Library ■■■■")
+	fmt.Println("■■■■■■■■■■■■■■■■■")
+	library.Log()
 }
