@@ -8,6 +8,7 @@ func Statement() {
 	fmt.Println("=== statement ===")
 	ifstatement()
 	forstatement()
+	switchstatement()
 
 }
 
@@ -94,4 +95,39 @@ func forstatement() {
 	// forever
 	// :
 	// :
+}
+
+func switchstatement() {
+	var x int = 1
+	var y int = 2
+	switch x {
+	case 1:
+		fmt.Println("1")
+	case 2:
+		fmt.Println("2")
+	default:
+		fmt.Println("default")
+	}
+	// 1
+
+	switch {
+	case x > y:
+		fmt.Println("Big")
+	case x < y:
+		fmt.Println("Small")
+	default:
+		fmt.Println("Equal")
+	}
+	// Small
+
+	var dayOfWeek string = "Monday"
+	switch dayOfWeek {
+	case "sat":
+		fallthrough
+	case "sun":
+		fmt.Println("Horiday")
+	default:
+		fmt.Println("Weekday")
+	}
+	// Weekday
 }

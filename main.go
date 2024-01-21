@@ -19,4 +19,6 @@ func main() {
 	basic.Struct()
 	basic.Interface()
 	basic.Statement()
+	basic.Defer()
+	basic.PanicAndRecover()
 }
