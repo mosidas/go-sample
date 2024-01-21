@@ -5,62 +5,62 @@ import (
 )
 
 func Operate() {
-	var x int = 1
-	var y int = 2
-	var p bool = true
+	fmt.Println("=== operate ===")
+	var x int = 3
+	var y int = 6
 
 	// arithmetic operator
-	fmt.Println(x + y) // 3
-	fmt.Println(x - y) // -1
-	fmt.Println(x * y) // 2
-	fmt.Println(x / y) // 0
-	fmt.Println(x % y) // 1
+	fmt.Printf("%v + %v = %v\n", x, y, x+y)  // 3 + 6 = 9
+	fmt.Printf("%v - %v = %v\n", x, y, x-y)  // 3 - 6 = -3
+	fmt.Printf("%v * %v = %v\n", x, y, x*y)  // 3 * 6 = 18
+	fmt.Printf("%v / %v = %v\n", x, y, x/y)  // 3 / 6 = 0
+	fmt.Printf("%v %% %v = %v\n", x, y, x%y) // 3 % 6 = 3
 
 	// comparison operator
-	fmt.Println(x == y) // false
-	fmt.Println(x != y) // true
-	fmt.Println(x > y)  // false
-	fmt.Println(x >= y) // false
-	fmt.Println(x < y)  // true
-	fmt.Println(x <= y) // true
+	fmt.Printf("%v == %v = %v\n", x, y, x == y) // 3 == 6 = false
+	fmt.Printf("%v != %v = %v\n", x, y, x != y) // 3 != 6 = true
+	fmt.Printf("%v > %v = %v\n", x, y, x > y)   // 3 > 6 = false
+	fmt.Printf("%v >= %v = %v\n", x, y, x >= y) // 3 >= 6 = false
+	fmt.Printf("%v < %v = %v\n", x, y, x < y)   // 3 < 6 = true
+	fmt.Printf("%v <= %v = %v\n", x, y, x <= y) // 3 <= 6 = true
 
+	var p bool = true
+	var q bool = false
 	// logical operator
-	fmt.Println(p && p)   // true
-	fmt.Println(p && !p)  // false
-	fmt.Println(p || p)   // true
-	fmt.Println(p || !p)  // true
-	fmt.Println(!p || !p) // false
-	fmt.Println(!p || p)  // true
+	fmt.Printf("%v && %v = %v\n", p, q, p && q) // true && false = false
+	fmt.Printf("%v || %v = %v\n", p, q, p || q) // true || false = true
+	fmt.Printf("!%v = %v\n", p, !p)             // !true = false
 
 	// bit operator
-	fmt.Println(x & y)  // 0
-	fmt.Println(x | y)  // 3
-	fmt.Println(x ^ y)  // 3
-	fmt.Println(x &^ y) // 1
-	fmt.Println(x << y) // 4
-	fmt.Println(x >> y) // 0
+	fmt.Printf("%v & %v = %v\n", x, y, x&y)   // 3 & 6 = 2 : 0011 & 0110 = 0010
+	fmt.Printf("%v | %v = %v\n", x, y, x|y)   // 3 | 6 = 7 : 0011 | 0110 = 0111
+	fmt.Printf("%v ^ %v = %v\n", x, y, x^y)   // 3 ^ 6 = 5 : 0011 ^ 0110 = 0101
+	fmt.Printf("%v &^ %v = %v\n", x, y, x&^y) // 3 &^ 6 = 1 : 0011 &^ 0110 = 0001
+	fmt.Printf("%v << %v = %v\n", x, y, x<<y) // 3 << 6 = 192 : 0011 << 6 = 11000000
+	fmt.Printf("%v >> %v = %v\n", x, y, x>>y) // 3 >> 6 = 0 : 0011 >> 6 = 000000
 
 	// assignment operator
 	x += y
-	fmt.Println(x) // 3
+	fmt.Printf("x += y -> %v\n", x) // 9
 	x -= y
-	fmt.Println(x) // 1
+	fmt.Printf("x -= y -> %v\n", x) // 3
 	x *= y
-	fmt.Println(x) // 2
+	fmt.Printf("x *= y -> %v\n", x) // 18
 	x /= y
-	fmt.Println(x) // 1
+	fmt.Printf("x /= y -> %v\n", x) // 3
 	x %= y
-	fmt.Println(x) // 1
+	fmt.Printf("x %%= y -> %v\n", x) // 3
 	x &= y
-	fmt.Println(x) // 0
+	fmt.Printf("x &= y -> %v\n", x) // 2 : 0011 & 0110 = 0010
 	x |= y
-	fmt.Println(x) // 2
+	fmt.Printf("x |= y -> %v\n", x) // 6 : 0010 | 0110 = 0110
 	x ^= y
-	fmt.Println(x) // 0
-	x &^= y
-	fmt.Println(x) // 1
+	fmt.Printf("x ^= y -> %v\n", x) // 4 : 0110 ^ 0110 = 0000
+	x = 3
 	x <<= y
-	fmt.Println(x) // 4
+	fmt.Printf("x <<= y -> %v\n", x) // 192 : 0011 << 6 = 11000000
 	x >>= y
-	fmt.Println(x) // 1
+	fmt.Printf("x >>= y -> %v\n", x) // 3 : 11000000 >> 6 = 00000011
+	x &^= y
+	fmt.Printf("x &^= y -> %v\n", x) // 1 : 00000011 &^ 0110 = 00000001
 }

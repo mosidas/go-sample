@@ -6,6 +6,7 @@ import (
 )
 
 func Convert() {
+	fmt.Println("=== convert ===")
 	var x int = 1 // 32bitOS: int32, 64bitOS: int64
 	var y int8 = 2
 	var z int16 = 3
@@ -27,7 +28,7 @@ func Convert() {
 	fmt.Println(int(y), int(z), int(a), int(b), int(c), int(d), int(e), int(f), int(g), int(h), int(i), int(j), int(m), int(n))
 
 	// numeric to string
-	fmt.Println(strconv.Itoa(x))
+	fmt.Println("x= " + strconv.Itoa(x))
 
 	// string to numeric
 	var q, err = strconv.Atoi(o)

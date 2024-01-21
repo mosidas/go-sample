@@ -8,4 +8,7 @@ func main() {
 	basic.Printtype()
 	basic.Convert()
 	basic.Operate()
+	basic.Format()
+	basic.Variable()
+	basic.Constant()
 }
