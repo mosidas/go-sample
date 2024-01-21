@@ -39,4 +39,7 @@ func main() {
 	fmt.Println("■■■■ Library ■■■■")
 	fmt.Println("■■■■■■■■■■■■■■■■■")
 	library.Log()
+	library.Strconv()
+	library.Time()
+	library.Duration()
 }
