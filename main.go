@@ -42,4 +42,6 @@ func main() {
 	library.Strconv()
 	library.Time()
 	library.Duration()
+	library.ConvertTime()
+	library.Os()
 }

@@ -1,6 +1,7 @@
 package library
 
 import (
+	"encoding/json"
 	"fmt"
 	"time"
 )
@@ -54,8 +55,38 @@ func Duration() {
 	fmt.Println("t2:", t2) // 2019-01-01 01:00:00 +0000 UTC
 	// sub
 	fmt.Println("sub:", t.Sub(t2)) // -2h0m0s
-
+	// before, after, equal
 	fmt.Println("t < t2:", t.Before(t2)) // true
 	fmt.Println("t > t2:", t.After(t2))  // false
 	fmt.Println("t == t2:", t.Equal(t2)) // false
+	// sleep
+	fmt.Println("start sleep")
+	time.Sleep(time.Second * 2)
+	fmt.Println("end sleep")
+}
+
+func ConvertTime() {
+	fmt.Println("=== convert ===")
+	// time -> timestamp
+	t := time.Now()
+	fmt.Println("t:", t)                       // 2019-01-01 00:00:00 +0000 UTC
+	fmt.Println("t.Unix():", t.Unix())         // 1546300800
+	fmt.Println("t.UnixNano():", t.UnixNano()) // 1546300800000000000
+	// timestamp -> time
+	t2 := time.Unix(1546300800, 0)
+	fmt.Println("t2:", t2) // 2019-01-01 00:00:00 +0000 UTC
+	t3 := time.Unix(0, 1546300800000000000)
+	fmt.Println("t3:", t3) // 2019-01-01 00:00:00 +0000 UTC
+
+	// string -> time
+	t4, _ := time.Parse("2006-01-02 15:04:05", "2019-01-01 00:00:00")
+	fmt.Println("t4:", t4) // 2019-01-01 00:00:00 +0000 UTC
+
+	// time -> json
+	type tJson struct {
+		Timestamp time.Time `json:"timestamp"`
+	}
+	tj, _ := json.Marshal(tJson{Timestamp: t})
+	fmt.Println("tj:", string(tj)) // {"timestamp":"2019-01-01T00:00:00Z"}
+
 }
