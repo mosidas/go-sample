@@ -16,6 +16,8 @@ func Os() {
 	// hostname
 	h, _ := os.Hostname()
 	fmt.Println("hostname:", h) // hostname
+	wd, _ := os.Getwd()
+	fmt.Println("getwd:", wd) // /Users/username/go/src/sample
 }
 
 func File() {

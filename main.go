@@ -3,8 +3,10 @@ package main
 import (
 	"fmt"
 	"sample/basic"
+	"sample/build_constraint"
 	"sample/goroutine"
 	"sample/library"
+	"sample/practice"
 )
 
 func main() {
@@ -44,4 +46,17 @@ func main() {
 	library.Duration()
 	library.ConvertTime()
 	library.Os()
+	library.Path()
+	library.Filepath()
+	library.Context()
+	fmt.Println("■■■■■■■■■■■■■■■■■■")
+	fmt.Println("■■■■ Practice ■■■■")
+	fmt.Println("■■■■■■■■■■■■■■■■■■")
+	practice.Builtin()
+	practice.Stringer()
+	fmt.Println("■■■■■■■■■■■■■■■■■■■■■■■■■■")
+	fmt.Println("■■■■ Build constraint ■■■■")
+	fmt.Println("■■■■■■■■■■■■■■■■■■■■■■■■■■")
+	buildconstraint.Build()
+	buildconstraint.Name() // tag:cat -> cat, tag:!cat -> dog
 }
