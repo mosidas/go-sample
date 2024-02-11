@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"sample/basic"
 	"sample/build_constraint"
+	"sample/designpattern"
 	"sample/goroutine"
 	"sample/library"
 	"sample/practice"
@@ -59,4 +60,9 @@ func main() {
 	fmt.Println("■■■■■■■■■■■■■■■■■■■■■■■■■■")
 	buildconstraint.Build()
 	buildconstraint.Name() // tag:cat -> cat, tag:!cat -> dog
+	fmt.Println("■■■■■■■■■■■■■■■■■■■■■■■■")
+	fmt.Println("■■■■ Design Pattern ■■■■")
+	fmt.Println("■■■■■■■■■■■■■■■■■■■■■■■■")
+	designpattern.FunctionalOptional()
+	designpattern.Builder()
 }
