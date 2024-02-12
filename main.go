@@ -55,6 +55,7 @@ func main() {
 	fmt.Println("■■■■■■■■■■■■■■■■■■")
 	practice.Builtin()
 	practice.Stringer()
+	practice.EmbeddedStruct()
 	fmt.Println("■■■■■■■■■■■■■■■■■■■■■■■■■■")
 	fmt.Println("■■■■ Build constraint ■■■■")
 	fmt.Println("■■■■■■■■■■■■■■■■■■■■■■■■■■")
